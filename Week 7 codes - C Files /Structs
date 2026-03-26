@@ -1,0 +1,69 @@
+//library books details 
+//borrowed 
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    const char *filename = "borrowed_books.txt";
+    FILE *f = fopen(filename, "a+");
+    if (!f) return 1;
+    char title[256];
+    while (1) {
+        printf("Enter book title (or single dot '.' to quit): ");
+        if (!fgets(title, sizeof title, stdin)) break;
+        size_t n = strlen(title);
+        if (n && title[n-1] == '\n') title[n-1] = '\0';
+        if (strcmp(title, ".") == 0) break;
+        if (title[0] == '\0') continue;
+        fprintf(f, "%s\n", title);
+        fflush(f);
+        printf("Title successfully stored.\n");
+    }
+    fclose(f);
+    return 0;
+}
+
+
+//Results data 
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    char name[100];
+    char regno[50];
+    int totalMarks;
+} Student;
+
+int main(void) {
+    const char *filename = "results.dat";
+    FILE *f = fopen(filename, "rb");
+    if (!f) {
+        fprintf(stderr, "Cannot open %s\n", filename);
+        return 1;
+    }
+    Student s;
+    while (fread(&s, sizeof s, 1, f) == 1) {
+        printf("Name: %s, Marks: %d\n", s.name, s.totalMarks);
+    }
+    fclose(f);
+    return 0;
+}
+
+
+//sales from student structs
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    const char *filename = "sales.txt";
+    FILE *f = fopen(filename, "r");
+    if (!f) {
+        fprintf(stderr, "Cannot open %s\n", filename);
+        return 1;
+    }
+    double amount, total = 0.0;
+    while (fscanf(f, "%lf", &amount) == 1) total += amount;
+    fclose(f);
+    printf("Total sales for the day: %.2f\n", total);
+    return 0;
+}
