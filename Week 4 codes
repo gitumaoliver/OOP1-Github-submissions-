@@ -1,0 +1,68 @@
+//ATM withdrawing system  IF loop 
+#include <iostream>
+using namespace std;
+
+int main() {
+    double balance;
+    cout << "Enter initial balance: ";
+    if (!(cin >> balance)) return 0;
+    while (balance > 0.0) {
+        double withdraw;
+        cout << "Enter amount to withdraw: ";
+        if (!(cin >> withdraw)) break;
+        if (withdraw < 0) {
+            cout << "Invalid amount\n";
+            continue;
+        }
+        if (withdraw > balance) {
+            cout << "Insufficient funds\n";
+            continue;
+        }
+        balance -= withdraw;
+        cout << "Balance: " << balance << '\n';
+    }
+    cout << "Account closed or zero balance\n";
+    return 0;
+}
+ //Number guessing game with IF loop 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand((unsigned)time(nullptr));
+    int secret = rand() % 20 + 1;
+    int attempts = 0;
+    int guess;
+    cout << "Guess the number (1-20):\n";
+    while (true) {
+        if (!(cin >> guess)) return 0;
+        ++attempts;
+        if (guess > secret) {
+            cout << "Too high!\n";
+        } else if (guess < secret) {
+            cout << "Too low!\n";
+        } else {
+            cout << "Congratulations!\n";
+            cout << "Attempts: " << attempts << '\n';
+            break;
+        }
+    }
+    return 0;
+}
+
+// do while loop code example prompting password 
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string pw;
+    do {
+        cout << "Enter password: ";
+        if (!getline(cin, pw)) return 0;
+    } while (pw != "1234");
+    cout << "Access Granted\n";
+    return 0;
+}
