@@ -1,0 +1,55 @@
+//Electric bill calculator 
+#include <iostream>
+using namespace std;
+
+long long calculateElectricBill(long long units) {
+    if (units <= 0) return 0;
+    long long bill = 0;
+    if (units > 200) {
+        bill += (units - 200) * 20;
+        units = 200;
+    }
+    if (units > 100) {
+        bill += (units - 100) * 15;
+        units = 100;
+    }
+    bill += units * 10;
+    return bill;
+}
+
+int main() {
+    long long units;
+    if (!(cin >> units)) return 0;
+    cout << calculateElectricBill(units) << '\n';
+    return 0;
+}
+//Fare calculation 
+#include <iostream>
+using namespace std;
+
+long long calculateFare(long long km) {
+    if (km <= 0) return 0;
+    return km * 50;
+}
+
+int main() {
+    long long km;
+    if (!(cin >> km)) return 0;
+    cout << calculateFare(km) << '\n';
+    return 0;
+}
+//Converrting farenheit to celciius 
+#include <iostream>
+using namespace std;
+
+double convertToCelsius(double f) {
+    return (f - 32.0) * 5.0 / 9.0;
+}
+
+int main() {
+    double f;
+    if (!(cin >> f)) return 0;
+    cout.setf(std::ios::fixed); cout.precision(2);
+    cout << convertToCelsius(f) << '\n';
+    return 0;
+}
