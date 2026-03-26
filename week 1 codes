@@ -1,0 +1,41 @@
+//units offered in ZU
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Zetech University Units Offered This Semester\n";
+    cout << "--------------------------------------------\n";
+    cout << "1. Introduction to Programming\n";
+    cout << "2. Data Structures\n";
+    cout << "3. Computer Networks\n";
+    cout << "4. Database Systems\n";
+    cout << "5. Software Engineering\n";
+
+    return 0;
+}
+
+// prompting user input 
+#include <iostream>
+using namespace std;
+
+int main() {
+    float height;
+    int siblings;
+    double bankBalance;
+
+    cout << "Enter your height (in meters): ";
+    cin >> height;
+
+    cout << "Enter number of siblings: ";
+    cin >> siblings;
+
+    cout << "Enter your bank balance: ";
+    cin >> bankBalance;
+
+    cout << "\n--- Details Entered ---\n";
+    cout << "Height: " << height << " m\n";
+    cout << "Siblings: " << siblings << endl;
+    cout << "Bank Balance: " << bankBalance << endl;
+
+    return 0;
+}
