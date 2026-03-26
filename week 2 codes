@@ -1,0 +1,95 @@
+//Volume and surface area of a cylinder 
+#include <iostream>
+using namespace std;
+
+int main() {
+    float r, h;
+    float volume, surfaceArea;
+
+    cout << "Enter radius: ";
+    cin >> r;
+
+    cout << "Enter height: ";
+    cin >> h;
+
+    volume = 3.142 * r * r * h;
+    surfaceArea = 2 * 3.142 * r * r + 2 * 3.142 * r * h;
+
+    cout << "\nVolume = " << volume << endl;
+    cout << "Surface Area = " << surfaceArea << endl;
+
+    return 0;
+}
+
+//Bank loan program with how to calculate simple and compound interest 
+#include <iostream>
+using namespace std;
+
+int main() {
+    float loan = 10000;
+    float interest = 0.10;
+    float repay, income;
+
+    repay = loan + (loan * interest);
+
+    cout << "Total amount to repay: " << repay << endl;
+
+    cout << "Enter your annual income: ";
+    cin >> income;
+
+    if (income > 25000) {
+        cout << "Loan Approved" << endl;
+    } else {
+        cout << "Loan Denied" << endl;
+    }
+
+    return 0;
+}
+
+//simple interest 
+#include <iostream>
+using namespace std;
+
+int main() {
+    float p, r, t, si;
+
+    cout << "Enter principal: ";
+    cin >> p;
+
+    cout << "Enter rate: ";
+    cin >> r;
+
+    cout << "Enter time: ";
+    cin >> t;
+
+    si = (p * r * t) / 100;
+
+    cout << "Simple Interest = " << si << endl;
+
+    return 0;
+}
+
+//Compound interest 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double p, r, t, amount;
+
+    cout << "Enter principal: ";
+    cin >> p;
+
+    cout << "Enter rate: ";
+    cin >> r;
+
+    cout << "Enter time: ";
+    cin >> t;
+
+    amount = p * pow((1 + r/100), t);
+
+    cout << "Final Amount = " << amount << endl;
+
+    return 0;
+}
