@@ -1,0 +1,120 @@
+//Exam Elligibility
+#include <iostream>
+using namespace std;
+
+int main() {
+    int attendance;
+
+    cout << "Enter attendance percentage: ";
+    cin >> attendance;
+
+    if (attendance >= 75) {
+        cout << "Allowed to sit for exam" << endl;
+    } else {
+        cout << "Not allowed to sit for exam" << endl;
+    }
+
+    return 0;
+}
+
+//Water bill claculator 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int units;
+    float bill = 0;
+
+    cout << "Enter water units used: ";
+    cin >> units;
+
+    if (units <= 30) {
+        bill = units * 10;
+    } else if (units <= 50) {
+        bill = (30 * 10) + (units - 30) * 15;
+    } else {
+        bill = (30 * 10) + (20 * 15) + (units - 50) * 20;
+    }
+
+    cout << "Total bill = " << bill << endl;
+
+    return 0;
+}
+
+//Simple portal login system
+#include <iostream>
+using namespace std;
+
+int main() {
+    string username, password;
+
+    cout << "Enter username: ";
+    cin >> username;
+
+    cout << "Enter password: ";
+    cin >> password;
+
+    if (username == "admin" && password == "1234") {
+        cout << "Login successful" << endl;
+    } else {
+        cout << "Invalid username or password" << endl;
+    }
+
+    return 0;
+}
+
+//Mobile data purchases
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+
+    cout << "1. Daily Bundle - 50\n";
+    cout << "2. Weekly Bundle - 200\n";
+    cout << "3. Monthly Bundle - 800\n";
+    cout << "Choose option: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "You selected Daily Bundle" << endl;
+    } else if (choice == 2) {
+        cout << "You selected Weekly Bundle" << endl;
+    } else if (choice == 3) {
+        cout << "You selected Monthly Bundle" << endl;
+    } else {
+        cout << "Invalid choice" << endl;
+    }
+
+    return 0;
+}
+
+//Mobile data purchases using switch case nstead of the if 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+
+    cout << "1. Daily Bundle - 50\n";
+    cout << "2. Weekly Bundle - 200\n";
+    cout << "3. Monthly Bundle - 800\n";
+    cout << "Choose option: ";
+    cin >> choice;
+
+    switch(choice) {
+        case 1:
+            cout << "Daily Bundle selected" << endl;
+            break;
+        case 2:
+            cout << "Weekly Bundle selected" << endl;
+            break;
+        case 3:
+            cout << "Monthly Bundle selected" << endl;
+            break;
+        default:
+            cout << "Invalid choice" << endl;
+    }
+
+    return 0;
+}
